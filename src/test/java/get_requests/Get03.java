@@ -17,7 +17,7 @@ public class Get03 {
         Then
             HTTP Status Code should be 200
       And
-          Response format should be "application/json"
+          Response format should be "application/JsonPlaceHolderBaseUrl"
       And
           "title" is "et itaque necessitatibus maxime molestiae qui quas velit",
       And
@@ -41,7 +41,7 @@ public class Get03 {
         //1. Yol:
         response.then()
                 .statusCode(200)
-                .contentType("application/json")
+                .contentType("application/JsonPlaceHolderBaseUrl")
                 .body("userId",equalTo(2))//"userId" is 2 --> Hard assertion
                 .body("title",equalTo("et itaque necessitatibus maxime molestiae qui quas velit"))//"title" is "et itaque necessitatibus maxime molestiae qui quas velit"
                 .body("completed",equalTo(false));//"completed" is false

@@ -15,7 +15,7 @@ public class Get01 {
         Then
             HTTP Status Code should be 200
         And
-            Content Type should be "application/json"
+            Content Type should be "application/JsonPlaceHolderBaseUrl"
         And
             Status Line should be "HTTP/1.1 200 OK"
         */
@@ -36,7 +36,7 @@ public class Get01 {
         //datanın header kısmı metadeta
         response.then()
                 .statusCode(200)//HTTP Status Code should be 200
-                .contentType("application/json")//Content Type should be "application/json"
+                .contentType("application/JsonPlaceHolderBaseUrl")//Content Type should be "application/JsonPlaceHolderBaseUrl"
                 .statusLine("HTTP/1.1 200 OK");//Status Line should be "HTTP/1.1 200 OK"
     }
 
