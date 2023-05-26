@@ -26,9 +26,9 @@ public class RequestResponse {
     public static void main(String[] args) {
 
         //Get request nasıl yapılır:
-        String url = "https://petstore.swagger.io/v2/pet/33301333";
+        String url = "https://petstore.swagger.io/v2/pet/1874101700";
         Response response = given().get(url);//import static io.restassured.RestAssured.given;
-        //response.prettyPrint();//prettyPrint() methodu ile response'ı konsola yazdırdık.
+        response.prettyPrint();//prettyPrint() methodu ile response'ı konsola yazdırdık.
 
         //Status code nasıl yazdırılır:
         System.out.println("Status code: " + response.statusCode());

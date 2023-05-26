@@ -20,7 +20,7 @@ public class Get01 {
             Status Line should be "HTTP/1.1 200 OK"
         */
 
-    @Test
+    @Test //test metot public void ve parametresiz olmalı
     public void get01() {
 //        i) Set the url --> endpoint'i kur
         String url = "https://restful-booker.herokuapp.com/booking/55";
@@ -34,9 +34,9 @@ public class Get01 {
 //        iv) Do assertion --> Doğrulama yap
 
         //datanın header kısmı metadeta
-        response.then()
+        response.then() //dogrulanabilir data döner 'validatable'
                 .statusCode(200)//HTTP Status Code should be 200
-                .contentType("application/JsonPlaceHolderBaseUrl")//Content Type should be "application/JsonPlaceHolderBaseUrl"
+                .contentType("application/json; charset=utf-8")//Content Type should be "application/JsonPlaceHolderBaseUrl"
                 .statusLine("HTTP/1.1 200 OK");//Status Line should be "HTTP/1.1 200 OK"
     }
 
