@@ -40,7 +40,7 @@ public class Get06 extends HerOkuAppBaseUrl {
     @Test
     public void test06() {
         //Set the url
-        spec.pathParams("first", "booking", "second", 50);
+        spec.pathParams("first", "booking", "second", 941);
 
         //Set the expected data
 
@@ -58,7 +58,7 @@ public class Get06 extends HerOkuAppBaseUrl {
                         "depositpaid", equalTo(true),
                         "bookingdates.checkin", equalTo("2018-01-01"),
                         "bookingdates.checkout", equalTo("2019-01-01"),
-                        "additionalneeds", equalTo("midnight snack"));
+                        "additionalneeds", equalTo("super bowls"));
 
         //2. Yol: Json Path
         JsonPath jsonPath = response.jsonPath();//jsonPath() methodu ile response'ı jsonPath objesine çevirdik.
@@ -70,7 +70,7 @@ public class Get06 extends HerOkuAppBaseUrl {
         assertTrue(jsonPath.getBoolean("depositpaid"));
         assertEquals("2018-01-01", jsonPath.getString("bookingdates.checkin"));
         assertEquals("2019-01-01", jsonPath.getString("bookingdates.checkout"));
-        assertEquals("midnight snack", jsonPath.getString("additionalneeds"));
+        assertEquals("super bowls", jsonPath.getString("additionalneeds"));
 
         //3. Yol: TestNG Soft Assertion
         //Soft Assertion adımları:
@@ -81,12 +81,15 @@ public class Get06 extends HerOkuAppBaseUrl {
         softAssert.assertEquals(jsonPath.getString("firstname"),"Josh","firstname uyuşmadı");
         softAssert.assertEquals(jsonPath.getString("lastname"),"Allen","lastname uyuşmadı");
         softAssert.assertEquals(jsonPath.getInt("totalprice"),111,"totalprice uyuşmadı");
-        softAssert.assertTrue(jsonPath.getBoolean("depositpaid"));
+        softAssert.assertTrue(jsonPath.getBoolean("depositpaid"),"depositpaid uyuşmadı");
+        softAssert.assertEquals(jsonPath.getString("bookingdates.checkin"),"2018-01-01","checkin uyuşmadı");
+        softAssert.assertEquals(jsonPath.getString("bookingdates.checkout"),"2019-01-01","checkout uyuşmadı");
+        softAssert.assertEquals(jsonPath.getString("additionalneeds"),"super bowls","additionalneeds uyuşmadı");
 
 
 
         //3. assertAll() methodunu kullan
-        softAssert.assertAll();
+       softAssert.assertAll();
 
 
 

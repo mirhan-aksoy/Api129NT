@@ -6,7 +6,8 @@ import io.restassured.specification.RequestSpecification;
 import org.junit.Before;
 
 public class JsonPlaceHolderBaseUrl {
-    //setUp() methodu ile request işleminde tekrarlı şekilde yapılacak işlemler burada bir kez yapılacak. @Test öncesi çalışması için @Before anatasyonu ekliyoruz.
+    //setUp() methodu ile request işleminde tekrarlı şekilde yapılacak işlemler burada bir kez yapılacak.
+    // @Test öncesi çalışması için @Before anatasyonu ekliyoruz.
 
     protected RequestSpecification spec;
 
